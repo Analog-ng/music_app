@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Music Player</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+   
+</head>
+
+<body  class="body">
+   <div class="card" id="card">
+    <div class="header">
+        <div class="logo">
+            <img src="assets/img/white_bg.svg" alt="Analog_logo" class="logo-img" height="100px" width="150px">
+        </div>
+        <a href="#" class="toggle" >
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </a>
+    </div>
+    <h1>Music Player</h1>
+    <div  class="music-container" id="music-container">
+        
+        <div class="music-info">
+            <h4 id="title">Buju</h4>
+            <div class="progress-container" id="progress-container">
+                <div class="progress" id="progress"> 
+
+                </div>
+            </div>
+        </div>
+
+        <audio src="/assets/music/Buju.mp3" id="audio"></audio>
+
+        <div class="img-container">
+            <img src="/assets/img/Buju.jpg" alt="music_img" id="cover">
+        </div>
+
+        <div class="nav">
+            <button id="prev" class="action-btn action-btn-small" >
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big" >
+                <i class="fas fa-play"></i>
+            </button>
+            <button id="next" class="action-btn action-btn-small" >
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+    </div>
+    <div class="socials">
+
+        <div class="social">
+            <a href="https://api.whatsapp.com/send?phone=2347036877727"  class="social_icon">
+                <i class="fab fa-whatsapp"></i>   
+            </a>
+        </div>
+
+        <div class="social">
+            <a href="https://www.instagram.com/olatunjioluwabamise/" class="social_icon">
+                <i class="fab fa-instagram"></i>  
+            </a>
+        </div>
+
+        <div class="social">
+           <a href="https://twitter.com/bamise_the_1st" class="social_icon">
+                <i class="fab fa-twitter"></i>  
+            </a>
+        </div>
+
+        <div class="social">
+            <a href="https://www.linkedin.com/in/olatunji-oluwabamise-12345abc"  class="social_icon">
+                <i class="fab fa-linkedin"></i>   
+            </a>  
+        </div>
+
+        <div class="social">
+            <a href="https://www.facebook.com/tunji.bamise.5"  class="social_icon">
+                <i class="fab fa-facebook"></i>   
+            </a>
+        </div>
+    </div>
+   </div>
+    
+
+<script src="main.js" ></script>
+</body>
+
+</html>

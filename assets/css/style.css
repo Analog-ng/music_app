@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root{
+
+    /* light theme */
+    --light_bg_color: #eff8ff;
+    --light_bg_card_color: antiquewhite;
+    --light_secondary_color: #349ffa;
+    --light_white_color: #fff;
+    --light_black_color: #000;
+
+
+    /* dark theme */
+    --dark_bg_color: #242629;
+    --dark_bg_card_color: #72757e;
+    --dark_secondary_color: #94a1b2;
+    --dark_btn_color: #7f5af0;
+    --dark_white_color: #EEEDDE;
+    --dark_black_color: #000;
+    --logo_color: #dc3c4d;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--light_bg_color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+h1{
+    color: var(--light_dark_color);
+    margin-bottom: 10px;
+}
+
+.fas, .fab{
+    font-size: 1.5rem;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: var(--light_bg_card_color);
+    border-radius: 1rem;
+    box-shadow: 0rem 0rem 1.9rem rgba(197, 168, 168, 0.2);
+
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.logo-img{
+    object-fit: cover;  
+}
+
+.toggle{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: -3.15rem 1.2rem;
+    width: 3.15rem;
+    height: 3.15rem;
+    position: relative;
+    background-color: var(--light_bg_color);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: .5s; 
+}
+
+.toggle .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.fa-moon{
+    color: var(--light_secondary_color)
+}
+.fa-sun{
+    color: var(--dark_white_color);
+    opacity: 0;
+    visibility: hidden;
+}
+.music-container{
+    background-color: var(--light_white_color);
+    border-radius: 1rem;
+    box-shadow: 0 1.25rem 1.25rem 0 rgba(252, 169, 169, 0.6);
+    display: flex;
+    padding: 1rem 1.5rem;
+    position: relative;
+    margin: 5rem 0 3.15rem 0;
+    z-index: 10;
+}
+
+.img-container{
+    position: relative;
+    width: 6.25rem;
+}
+
+.img-container::after {
+    content: '';
+    background-color: var(--light_white_color);
+    height: 1.25rem;
+    width: 1.25rem;
+    position: absolute;
+    left: 40%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-40% -50%);
+
+}
+
+.img-container img{
+   height: 6.25rem;
+   width: inherit;
+   border-radius: 50%;
+   object-fit: cover;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   animation: rotate 3s linear infinite;
+
+   animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state:running ;
+}
+
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.action-btn-small{
+    height: 45px;
+    width: 45px;
+}
+
+#prev, #play, #next{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.action-btn{
+    /* background-color: var(--white_color); */
+    background-color: #ecf0f3;
+    border: none;
+    font-size:1.25rem;
+    cursor: pointer;
+    padding: 0.625rem;
+    margin: 01.25rem;
+    box-shadow: -5px -5px 12px #fff, 5px 5px 12px rgba(0, 0, 0, .16);
+    border-radius: 50%;
+    position: relative;
+}
+.action-btn-big{
+    font-size: 1.875rem;
+    height: 55px;
+    width: 55px;
+}
+.action-btn:focus {
+    outline: 0;
+}
+
+.music-info{
+    position: absolute;
+    top: 0;
+    left:1.25rem;
+    border-radius: 1rem 1rem 0 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transform: translateY(0%);
+    width: 90%;
+    padding: 0.625rem 0.625rem 0.625rem 0.625rem;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4 {
+    margin: 0;
+    text-align: center;
+    
+}
+
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.progress-container{
+    background: var(--light_white_color);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.625rem 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress{
+    background-color: var(--logo_color);
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+
+}
+
+.socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+    
+}
+
+.social {
+    padding: 0.625rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social_icon{
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    color: var(--light_bg_color);
+    position: relative;
+    background-color: var(--light_secondary_color);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: .5s; 
+
+
+}
+
+.social_icon .fab{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.social_icon:hover{
+    transform: translateY(-0.625rem);
+}
+
+/* dark theme css */
+.is-dark{
+    background-color: var(--dark_bg_color);
+}
+
+.is-dark .card{
+    background-color: var(--dark_bg_card_color);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.is-dark .music-container{
+    background-color: var(--dark_secondary_color);
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.is-dark .toggle{
+    background-color: var(--dark_bg_color);
+}
+
+.is-dark h1{
+    color: var(--dark_white_color);
+}
+.is-dark .action-btn{
+    color: var(--dark_bg_color);
+    background-color: var(--dark_btn_color);
+    box-shadow: -5px -5px 12px var(--dark_bg_card_color), 5px 5px 12px rgba(0, 0, 0, .16);
+    
+}
+
+.is-dark .social_icon{
+    background-color: var(--dark_secondary_color);
+
+
+}
+
+.is-dark .fa-sun{
+    opacity: 1;
+    visibility: visible;
+}
+
+.is-dark .fa-moon{
+
+    opacity: 0;
+    visibility: hidden;
+}
+
