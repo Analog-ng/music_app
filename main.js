@@ -12,8 +12,8 @@ const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
 // Song titles
-const songs = [ 'Celebration', 
-'Asa_IDG', 'Buju', 'kizz_daniel', 'Olamide'];
+const songs = [ 'Buju', 'Celebration', 
+'Asa_IDG', 'kizz_daniel', 'Olamide'];
 
 // Keep track of song
 let songIndex = 0;
