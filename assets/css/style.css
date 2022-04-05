@@ -185,16 +185,17 @@ h1{
     border: none;
     font-size:1.25rem;
     cursor: pointer;
-    padding: 0.725rem;
-    margin: 1rem;
+    padding: 1.5rem;
+    margin: .725rem;
     box-shadow: -5px -5px 12px #fff, 5px 5px 12px rgba(0, 0, 0, .16);
     border-radius: 50%;
     position: relative;
 }
 .action-btn-big{
     font-size: 1.875rem;
-    height: 48px;
-    width: 48px;
+    height: 40px;
+    width: 40px;
+    padding:2rem;
 }
 .action-btn:focus {
     outline: 0;
@@ -339,5 +340,17 @@ h1{
 
     .card{
         margin: auto 10px!important;
+    }
+
+    .action-btn-big{
+        font-size: 1.675rem;
+        height: 40px;
+        width: 40px;
+    }
+
+    .action-btn-small{
+        font-size:1.25rem;
+        height: 32px;
+        width: 32px;
     }
 }
