@@ -332,7 +332,7 @@ h1{
     visibility: hidden;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and ( max-width: 600px) {
 
     body {
         padding: 10px;
@@ -344,13 +344,20 @@ h1{
 
     .action-btn-big{
         font-size: 1.675rem;
-        height: 40px;
-        width: 40px;
+        height: 45px;
+        width: 45px;
+        padding: 1.8;
     }
 
     .action-btn-small{
         font-size:1.25rem;
         height: 32px;
         width: 32px;
+    }
+
+    .action-btn{
+        
+        padding: 1.2rem;
+        
     }
 }
